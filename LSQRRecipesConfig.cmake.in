@@ -1,0 +1,26 @@
+#
+# LSQRRecipes CMake configuration file for external projects, configured through
+# the GenerateLSQRRecipesConfig.cmake file (config_file)
+#
+
+#
+# LSQRRecipes include file directories
+#
+set(LSQRRecipes_INCLUDE_DIRS "@LSQRRecipes_INCLUDE_DIRS_CONFIG@")
+
+#
+# LSQRRecipes library directories
+#
+set(LSQRRecipes_LIBRARY_DIRS "@LSQRRecipes_LIBRARY_DIRS_CONFIG@")
+
+#
+# The LSQRRecipes version number
+#
+set(LSQRRecipes_VERSION_MAJOR "@LSQRRecipes_VERSION_MAJOR@")
+set(LSQRRecipes_VERSION_MINOR "@LSQRRecipes_VERSION_MINOR@")
+set(LSQRRecipes_VERSION_PATCH "@LSQRRecipes_VERSION_PATCH@")
+
+#
+# The location of the UseLSQRRecipes.cmake file.
+#
+set(LSQRRecipes_USE_FILE "@LSQRRecipes_USE_FILE@")

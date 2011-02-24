@@ -1,0 +1,17 @@
+#
+# This file sets up include directories, and link directories, 
+# for a project that wants to use LSQRRecipes.  It should not be
+# included directly, rather use the LSQRRecipes_USE_FILE variable
+# value from LSQRRecipesConfig.cmake.
+#
+
+#
+# include directories needed to use LSQRRecipes
+#
+include_directories(${LSQRRecipes_INCLUDE_DIRS})
+
+#
+#link directories needed to use LSQRRecipes
+#
+LINK_DIRECTORIES(${LSQRRecipes_LIBRARY_DIRS})
+
