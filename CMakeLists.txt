@@ -133,7 +133,7 @@ set_target_properties(LSQRRecipes PROPERTIES
 option(BUILD_TESTING "Build the Testing directory." ON)
 if(BUILD_TESTING)
   enable_testing()
-  set(LSQR_RECIPES_TESTING_DATA_ROOT ${LSQRRecipes_SOURCE_DIR}/Testing/Data)
+  set(LSQR_RECIPES_TESTING_DATA_ROOT ${LSQRRecipes_SOURCE_DIR}/testing/Data)
   add_subdirectory(testing)
 endif()
 
