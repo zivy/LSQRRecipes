@@ -106,6 +106,7 @@ set(LSQRRecipes_HDRS
    parametersEstimators/RayIntersectionParametersEstimator.h
    parametersEstimators/SinglePointTargetUSCalibrationParametersEstimator.h
    parametersEstimators/PlanePhantomUSCalibrationParametersEstimator.h
+   parametersEstimators/AbsoluteOrientationParametersEstimator.h
 )
 
 set(LSQRRecipes_SRCS
@@ -115,6 +116,7 @@ set(LSQRRecipes_SRCS
    parametersEstimators/RayIntersectionParametersEstimator.cxx
    parametersEstimators/SinglePointTargetUSCalibrationParametersEstimator.cxx
    parametersEstimators/PlanePhantomUSCalibrationParametersEstimator.cxx
+   parametersEstimators/AbsoluteOrientationParametersEstimator.cxx   
 )
 
 #
