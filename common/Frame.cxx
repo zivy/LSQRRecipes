@@ -226,7 +226,7 @@ void Frame::apply(Point3D &p) const
 	p[2] = z;
 }
 /*****************************************************************************/
-void Frame::apply(Point3D &p, Point3D &pTransformed) const
+void Frame::apply(const Point3D &p, Point3D &pTransformed) const
 {
 	double x, y, z;
 

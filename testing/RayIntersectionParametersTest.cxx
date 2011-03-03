@@ -5,10 +5,9 @@
 
 
 /*
- * Test the plane estimator's methods. We arbitrarily choose to work with 3D
- * planes even though the tested code works for any dimension.
+ * Test the ray intersection methods.
  */
-int main( int argc, char *argv[] )
+int main(int argc, char *argv[])
 {
   std::vector<lsqrRecipes::Ray3D> rayData;
   std::vector<lsqrRecipes::Ray3D> noNoise;

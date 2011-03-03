@@ -72,6 +72,7 @@ int main( int argc, char *argv[] )
       std::cerr<<"\t"<<argv[0]<<" transformationsFileName 2DPointsFileName\n";
   }
 }
+
 /*****************************************************************************/
 
 int phantomTest(const std::string &transformationsFileName,

@@ -150,7 +150,7 @@ public:                                    //0.5 degrees
      *                     p.
      * @see Point3D
      */
-	void apply(Point3D &p, Point3D &pTransformed) const;
+	void apply(const Point3D &p, Point3D &pTransformed) const;
 
 
     /**
