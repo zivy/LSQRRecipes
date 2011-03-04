@@ -154,11 +154,13 @@ double RANSAC<T,S>::compute(std::vector<S> &parameters,
 {
   unsigned int numForEstimate = paramEstimator->numForEstimate();
 	std::vector<T *> leastSquaresEstimateData;
-	int numDataObjects = data.size();
-	int numVotesForBest = 0;
+	unsigned int numDataObjects = data.size();
+	unsigned int numVotesForBest = 0;
 	int *arr = new int[numForEstimate];
-	short *curVotes = new short[numDataObjects];  //one if data[i] agrees with the current model, otherwise zero
-	short *bestVotes = new short[numDataObjects];  //one if data[i] agrees with the best model, otherwise zero
+            //true if data[i] agrees with the current model, otherwise false
+	bool *curVotes = new bool[numDataObjects];  
+              //true if data[i] agrees with the largest consensus model
+	bool *bestVotes = new bool[numDataObjects];  
 	
 	parameters.clear();
 
@@ -171,7 +173,7 @@ double RANSAC<T,S>::compute(std::vector<S> &parameters,
 	
 	   //compute the least squares estimate using the largest sub set
 	if(numVotesForBest > 0) {
-		for(int j=0; j<numDataObjects; j++) {
+		for(unsigned int j=0; j<numDataObjects; j++) {
 			if(bestVotes[j])
 				leastSquaresEstimateData.push_back(&(data[j]));
 		}
@@ -193,7 +195,7 @@ double RANSAC<T,S>::compute(std::vector<S> &parameters,
 
 template<class T, class S>
 void RANSAC<T,S>::computeAllChoices(ParametersEstimator<T,S> *paramEstimator, std::vector<T> &data,
-																		bool *bestVotes, bool *curVotes, int &numVotesForBest, int startIndex, int k, int arrIndex, int *arr)
+																		bool *bestVotes, bool *curVotes, unsigned int &numVotesForBest, int startIndex, int k, int arrIndex, int *arr)
 {
 	              //we have a new choice of indexes
   if(k==0) {
@@ -213,7 +215,7 @@ void RANSAC<T,S>::computeAllChoices(ParametersEstimator<T,S> *paramEstimator, st
 
 template<class T, class S>
 void RANSAC<T,S>::estimate(ParametersEstimator<T,S> *paramEstimator, std::vector<T> &data, 
-											     bool *bestVotes, bool *curVotes, int &numVotesForBest, int *arr)
+											     bool *bestVotes, bool *curVotes, unsigned int &numVotesForBest, int *arr)
 {
 	std::vector<T *> exactEstimateData;
 	std::vector<S> exactEstimateParameters;

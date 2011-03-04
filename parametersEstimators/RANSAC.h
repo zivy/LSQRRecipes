@@ -125,12 +125,12 @@ private:
 	static void computeAllChoices(ParametersEstimator<T,S> *paramEstimator, 
                                 std::vector<T> &data,
 												        bool *bestVotes, bool *curVotes, 
-                                int &numVotesForBest, int startIndex, int k, 
+                                unsigned int &numVotesForBest, int startIndex, int k, 
                                 int arrIndex, int *arr);
 
 	static void estimate(ParametersEstimator<T,S> *paramEstimator, 
                        std::vector<T> &data, bool *bestVotes, bool *curVotes, 
-                       int &numVotesForBest, int *arr);
+                       unsigned int &numVotesForBest, int *arr);
 
 	 class SubSetIndexComparator {
 		 private:
