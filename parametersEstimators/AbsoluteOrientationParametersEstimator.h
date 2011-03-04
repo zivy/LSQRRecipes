@@ -1,7 +1,7 @@
 #ifndef _ABSOLUTE_ORIENTATION_PARAMETERS_ESTIMATOR_H_
 #define _ABSOLUTE_ORIENTATION_PARAMETERS_ESTIMATOR_H_
 
-#include "Copyright.h"
+#include "copyright.h"
 
 #include "ParametersEstimator.h"
 #include "Point3D.h"

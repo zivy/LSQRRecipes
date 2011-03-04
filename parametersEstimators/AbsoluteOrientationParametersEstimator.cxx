@@ -121,7 +121,7 @@ void AbsoluteOrientationParametersEstimator::leastSquaresEstimate(std::vector< s
 																							                    std::vector<double> &parameters)
 {
 	parameters.clear();
-	int i, pairNum = data.size();
+	unsigned int i, pairNum = data.size();
 	              //not enough data elements for computation
 	if(pairNum<this->minForEstimate)
 		return;
@@ -164,7 +164,8 @@ void AbsoluteOrientationParametersEstimator::leastSquaresEstimate(std::vector< s
 		curMat(2,2) = leftPoint[2]*rightPoint[2];
 		M+=curMat;
 	}
-	M+= (muLmuR *(-pairNum));
+
+	M+= (muLmuR* -(static_cast<int>(pairNum)));
 
             	//compute the matrix N	
 	vnl_matrix<double> tmpMat(3,3,0);
@@ -208,7 +209,7 @@ void AbsoluteOrientationParametersEstimator::weightedLeastSquaresEstimate(std::v
 		                                                                      std::vector<double> &parameters)
 {
 	parameters.clear();
-	int i, pairNum = data.size();
+	unsigned int i, pairNum = data.size();
 	              //not enough data elements for computation
 	if(pairNum<this->minForEstimate)
 		return;

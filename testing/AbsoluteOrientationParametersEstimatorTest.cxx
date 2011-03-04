@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "Frame.h"
 #include "AbsoluteOrientationParametersEstimator.h"
 #include "RandomNumberGenerator.h" 
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
 	double bounds = 100.0; //point coordinates are in [-100,100]
 	double maxTranslation = 1000.0; //translations are in [-1000,1000]
 	std::vector< DataType > estimationData, cleanEstimationData, targetData;
-  double noiseSigma = 3.0; //noise is distributed IID ~N(0,noisSigma)
+  double noiseSigma = 5.0/3.0; //noise is distributed IID ~N(0,noisSigma)
 	DataType pointPair, outlierPair;
   std::vector<double> knownTransformationParameters, 
                       estimatedTransformationParameters;
@@ -58,8 +59,8 @@ int main(int argc, char *argv[])
 		knownTransformation.apply(pointPair.first,pointPair.second);
     cleanEstimationData.push_back(pointPair);
     pointPair.second[0] += random.normal(noiseSigma);
-		pointPair.second[1] += random.normal(noiseSigma);
-		pointPair.second[2] += random.normal(noiseSigma);
+	  pointPair.second[1] += random.normal(noiseSigma);
+	  pointPair.second[2] += random.normal(noiseSigma);
 		estimationData.push_back(pointPair);
              //data for evaluation, our random targets
 		pointPair.first[0] = random.uniform(-bounds,bounds);
@@ -77,7 +78,7 @@ int main(int argc, char *argv[])
 	lsqrRecipes::AbsoluteOrientationParametersEstimator aopEstimator(1.0);
       //this threshold is used by the reportAndCheckResults() method which checks
       //that the maximal TRE for the random targets is less than this value
-  double distanceThreshold = 3*noiseSigma;
+  double distanceThreshold = 3.0*noiseSigma;
 
 	            //the known transformation
 	std::cout<<"Known transformation:\n"<<knownTransformation;
@@ -127,7 +128,6 @@ bool reportAndCheckResults(const std::string &title,
                                            estimatedTransformationParameters[5], 
                                            estimatedTransformationParameters[6]);
     std::cout<<"Estimated transformation:\n"<<estimatedTransformation<<"\n";
-    unsigned int n = evaluationData.size();
     std::vector< std::pair<lsqrRecipes::Point3D,lsqrRecipes::Point3D> >::const_iterator it, end;
     end = evaluationData.end();
     double maxDistance = 0.0;

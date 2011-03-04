@@ -110,3 +110,11 @@ target_link_libraries(pointerUSCalibration ${LINK_LIBRARIES})
 #
 add_executable(planeUSCalibration planeUSCalibration.cxx)
 target_link_libraries(planeUSCalibration ${LINK_LIBRARIES})
+
+
+#
+# Example program showing the use of the exhaustive search option in the RANSAC
+# class for absolute orientation when using a small number of paired points.
+#
+add_executable(absoluteOrientation AbsoluteOrientation.cxx)
+target_link_libraries(absoluteOrientation ${LINK_LIBRARIES})
