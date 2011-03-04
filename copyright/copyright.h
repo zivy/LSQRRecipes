@@ -2,7 +2,7 @@
 #define _COPYRIGHT_H_
 
 /**
- * Copyright (c) 2010, Ziv Yaniv, All rights reserved.
+ * Copyright (c) 2010-2011, Ziv Yaniv, All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -34,7 +34,7 @@ namespace lsqrRecipes {
 
 class Copyright {
 public:
-  static void print(std::ostream& output) {output<<"Copyright (c) 2010 Ziv Yaniv\n";}
+  static void print(std::ostream& output) {output<<"Copyright (c) 2010-2011 Ziv Yaniv\n";}
 };
 
 } //namespace lsqrRecipes
