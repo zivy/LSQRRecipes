@@ -9,9 +9,11 @@ The context within which these algorithms were used is image-guided intervention
 The parametric objects include:
 1. (hyper) sphere.
 2. (hyper) plane.
-3. Intersection point of 3D rays.
+3. intersection point of 3D rays.
 4. US calibration matrix via (a) crosswire phantom (b) calibrated pointer
    (c) plane phantom.
+5. absolute orientation, rigid transformation, relating corresponding point pairs
+   in two coordinate systems [unit quaternion solution due to B.K.P. Horn].
 
 Example and testing programs are provided.
 
