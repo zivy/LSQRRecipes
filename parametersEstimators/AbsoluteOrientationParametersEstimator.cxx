@@ -107,8 +107,8 @@ void AbsoluteOrientationParametersEstimator::estimate(std::vector< std::pair<Poi
 																	                    std::vector<double> &parameters)
 {
 	std::vector< std::pair<Point3D,Point3D> *> usedData;
-	int dataSize = data.size();
-	for(int i=0; i<dataSize; i++)
+	unsigned int dataSize = static_cast<unsigned int>(data.size());
+	for(unsigned int i=0; i<dataSize; i++)
 		usedData.push_back(&(data[i]));
 	estimate(usedData,parameters);
 }
@@ -121,7 +121,7 @@ void AbsoluteOrientationParametersEstimator::leastSquaresEstimate(std::vector< s
 																							                    std::vector<double> &parameters)
 {
 	parameters.clear();
-	unsigned int i, pairNum = data.size();
+	unsigned int i, pairNum = static_cast<unsigned int>(data.size());
 	              //not enough data elements for computation
 	if(pairNum<this->minForEstimate)
 		return;
@@ -209,7 +209,7 @@ void AbsoluteOrientationParametersEstimator::weightedLeastSquaresEstimate(std::v
 		                                                                      std::vector<double> &parameters)
 {
 	parameters.clear();
-	unsigned int i, pairNum = data.size();
+	unsigned int i, pairNum = static_cast<unsigned int>(data.size());
 	              //not enough data elements for computation
 	if(pairNum<this->minForEstimate)
 		return;
@@ -303,8 +303,8 @@ void AbsoluteOrientationParametersEstimator::leastSquaresEstimate(std::vector< s
 																							                    std::vector<double> &parameters)
 {
 	std::vector< std::pair<Point3D,Point3D> *> usedData;
-	int dataSize = data.size();
-	for(int i=0; i<dataSize; i++)
+	unsigned int dataSize = static_cast<unsigned int>(data.size());
+	for(unsigned int i=0; i<dataSize; i++)
 		usedData.push_back(&(data[i]));
 	leastSquaresEstimate(usedData,parameters);
 }

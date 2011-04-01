@@ -154,7 +154,7 @@ double RANSAC<T,S>::compute(std::vector<S> &parameters,
 {
   unsigned int numForEstimate = paramEstimator->numForEstimate();
 	std::vector<T *> leastSquaresEstimateData;
-	unsigned int numDataObjects = data.size();
+	unsigned int numDataObjects = static_cast<unsigned int>(data.size());
 	unsigned int numVotesForBest = 0;
 	int *arr = new int[numForEstimate];
             //true if data[i] agrees with the current model, otherwise false
@@ -223,7 +223,7 @@ void RANSAC<T,S>::estimate(ParametersEstimator<T,S> *paramEstimator, std::vector
 	unsigned int numVotesForCur;
 	unsigned int j;
 
-	numDataObjects = data.size();
+	numDataObjects = static_cast<unsigned int>(data.size());
   std::fill(curVotes,curVotes+numDataObjects, false);
 	numVotesForCur=0;
 
