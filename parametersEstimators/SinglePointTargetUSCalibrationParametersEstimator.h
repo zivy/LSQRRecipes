@@ -28,7 +28,7 @@
  * L. Mercier, T. Lango, F. Lindseth, L.D. Collins, Ultrasound in Med. & Biol., 
  * vol. 31(2), pp. 143-165, 2005.
  * 
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv
  *
  */
 
@@ -132,7 +132,7 @@ public:
    *                   world/tracker coordinate system (t_1).
    * [t_1x, t_1y, t_1z, t_3x, t_3y, t_3z, omega_z, omega_y, omega_x, m_x, m_y, m_x*R3(:,1), m_y*R3(:,2), R3(:,3)].
    *
-   *                   Angles are in radians.
+   * Angles are in radians.
    *
    * @param data A data element comprised of the US-DRF transformation and the
    *             2D point location in the image coordinate system.
@@ -196,7 +196,7 @@ public:
    *             error of this data set.
 	 * @param parameters This vector is cleared and then filled with the computed 
    *                   US calibration transformation parameters and the 
-   *                   estimtated 3D point location in the
+   *                   estimated 3D point location in the
    *                   world/tracker coordinate system (t_1).
    * [t_1x, t_1y, t_1z, t_3x, t_3y, t_3z, omega_z, omega_y, omega_x, m_x, m_y, m_x*R3(:,1), m_y*R3(:,2), R3(:,3)].
    *
@@ -269,7 +269,7 @@ public:
    *                          for nonlinear estimation.
 	 * @param finalParameters This vector is cleared and then filled with the computed 
    *                   US calibration transformation parameters and the 
-   *                   estimtated 3D point location in the
+   *                   estimated 3D point location in the
    *                   world/tracker coordinate system (t_1).
    * [t_1x, t_1y, t_1z, t_3x, t_3y, t_3z, omega_z, omega_y, omega_x, m_x, m_y, m_x*R3(:,1), m_y*R3(:,2), R3(:,3)].
    *

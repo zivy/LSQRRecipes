@@ -8,10 +8,11 @@
 #include "Frame.h"
 
 /**
- * Class representing 3D rays using a point, p, and a normal, n, such that the ray is r(t) = p+t*n and t is in [0,inf).
+ * Class representing 3D rays using a point, p, and a normal, n, such that the 
+ * ray is r(t) = p+t*n and t is in [0,inf).
  * Note that it is not assumed that ||n|| = 1.
  *
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv
  */
 
 namespace lsqrRecipes {
@@ -92,7 +93,7 @@ public:
 	}
 
 	/**
-	 * Write the ray bundle to the stream in open inventor ascii format.
+	 * Write the ray bundle to the stream in open inventor ASCII format.
 	 * The ray bundle is described by a set of lines which originate at the rays origin
 	 * and have length 'rayLength'. The origin is marked by a sphere. Both the sphere
 	 * and lines are drawn using 'color'.

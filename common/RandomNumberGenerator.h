@@ -6,10 +6,11 @@
 #include <vnl/vnl_random.h>
 
 /**
- * A wrapper for the VNL random number generator that implements the interface 
- * defined by the abstract class RandomNumberGenerator.
+ * A wrapper for the VNL random number generator (facilitates separation of
+ * the least squares library code from VNL sometime in the future - probably
+ * never).
  *
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv 
  */
 
 namespace lsqrRecipes {
@@ -31,7 +32,8 @@ public:
   }
 
    /**
-    * Get a random number normally distributed with given mean and standard deviation.    
+    * Get a random number normally distributed with given mean and standard 
+    * deviation.    
     * @param sigma Normal distributions standard deviation, default is one.
     * @param mu Normal distribution's mean, default is zero.
     */

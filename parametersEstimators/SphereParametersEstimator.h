@@ -9,12 +9,13 @@
 
 
 /**
- * This class estimates the parameters of a (hyper)sphere.
+ * This class estimates the parameters of a hypersphere (in 2D this is a circle,
+ * in 3D this is a sphere...).
  * A sphere is represented as: (1) (p-c)^T(p-c) = sum(p_i-c_i)^2 = r^2
- * where p in R^n is a point on the (hyper)sphere, c in R^n is the sphere's 
+ * where p in R^n is a point on the hypersphere, c in R^n is the sphere's 
  * center, and r its radius.
  * 
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv
  *
  */
 namespace lsqrRecipes {
@@ -36,7 +37,7 @@ public:
 	SphereParametersEstimator(double delta, LeastSquaresType lsType = GEOMETRIC);
 
 	/**
-	 * Compute the (hyper)sphere defined by the given data points.
+	 * Compute the hypersphere defined by the given data points.
 	 * @param data A vector containing k+1 kD points.
 	 * @param parameters This vector is cleared and then filled with the computed 
    *                   parameter values. The parameters of the (hyper)sphere 
@@ -52,8 +53,8 @@ public:
                         std::vector<double> &parameters);
 
 	/**
-	 * Compute a least squares estimate of the (hyper)sphere defined by the given 
-   * points. This may be either an algebraic or geomtric least squares 
+	 * Compute a least squares estimate of the hypersphere defined by the given 
+   * points. This may be either an algebraic or geometric least squares 
    * computation depending on the LeastSquaresType settings. For further 
    * information see geometricLeastSquaresEstimate(), and 
    * algebraicLeastSquaresEstimate().
@@ -72,7 +73,7 @@ public:
                                     std::vector<double> &parameters);
 
 	/**
-	 * Return true if the geometric distance between the (hyper)sphere and the 
+	 * Return true if the geometric distance between the hypersphere and the 
    * given point is smaller than 'delta' (see constructor).
 	 *
 	 * @param parameters The sphere parameters [c_0,...,c_k,r].
@@ -85,7 +86,7 @@ public:
                      Point<double, dimension> &data);
 
 	/**
-	 * Change the distance defining if a point is on the (hyper)sphere or not.
+	 * Change the distance defining if a point is on the hypersphere or not.
 	 * @param delta A point is on the sphere if its distance from it is less than
    *             'delta'.
    */	
@@ -99,14 +100,14 @@ public:
 	void setLeastSquaresType(LeastSquaresType lsType) {this->lsType = lsType;}
 
 	/**
-	 * Compute a least squares estimate of the (hyper)sphere defined by the given 
+	 * Compute a least squares estimate of the hypersphere defined by the given 
    * points.
 	 * This implementation is of an algebraic least squares error:
 	 * min||Ax-b||, where A = [-2p_0,-2p_1,...,-2p_{k-1},1], 
    *                    x = [c_0,c_1,...,c_{k-1},d], 
    *                    b = [-p_0^2 - p_1^2 - ... -p_{k-1}^2]
 	 *
-	 * @param data The (hyper)sphere should minimize the algebraic least squares 
+	 * @param data The hypersphere should minimize the algebraic least squares 
    *             error to these points.
 	 * @param parameters This vector is cleared and then filled with the computed 
    *                   parameters. The parameters of the (hyper)sphere passing 
@@ -139,7 +140,7 @@ public:
                                      std::vector<double> &finalParameters);
 
   /**
-   * Get the distances between the given (hyper)sphere and the given points.
+   * Get the distances between the given hypersphere and the given points.
    * These are pushed at the end of the 'distances' vector.
    *
    * @param parameters The (hyper)sphere parameters [c,r].

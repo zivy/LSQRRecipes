@@ -38,7 +38,7 @@
  *                                            homography estimation).
  *                                   S - type of parameter (e.g. double).                          
  *
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv 
  *
  */
 
@@ -57,7 +57,7 @@ public:
    *                                  exact fit.
 	 *                               2. The given data is in a singular 
    *                                  configuration (e.g. trying to fit a circle
-	 *                                  to a set of colinear points).
+	 *                                  to a set of collinear points).
    *                               3. The given parameter 
    *                                  desiredProbabilityForNoOutliers is not in 
    *                                 (0,1).
@@ -94,7 +94,7 @@ public:
    *                                  exact fit.
 	 *                               2. The given data is in a singular 
    *                                  configuration (e.g. trying to fit a circle
-	 *                                  to a set of colinear points).
+	 *                                  to a set of collinear points).
 	 * @param paramEstimator An object which can estimate the desired parameters 
    *                       using either an exact fit or a least squares fit.
 	 * @param data The input from which the parameters will be estimated.
@@ -105,7 +105,7 @@ public:
 	 * @return Returns the percentage of data used in the least squares estimate.
    *
 	 * NOTE: This method should be used only when n choose k is small 
-   *       (i.e. k or (n-k) are approximatly equal to n)
+   *       (i.e. k or (n-k) are approximately equal to n)
 	 *
 	 */
 	 static double compute(std::vector<S> &parameters, 

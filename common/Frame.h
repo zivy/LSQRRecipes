@@ -19,7 +19,7 @@
  * Implementation of a Frame/Rigid/Euclidean transformation.
  * All angular input and ouput is done in radians.
  *
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv 
  */
 
 namespace lsqrRecipes {
@@ -41,7 +41,7 @@ public:                                    //0.5 degrees
   int outputFormat;
 
 	/**
-	 * Usefull method when setting frame data. 
+	 * Useful method when setting frame data. 
 	 * Translates degrees to radians.
 	 */
 	static inline double toRadians(double angleInDegrees) {
@@ -49,7 +49,7 @@ public:                                    //0.5 degrees
 	}
 
 	/**
-	 * Usefull method when getting frame data. 
+	 * Useful method when getting frame data. 
 	 * Translates radians to degrees.
 	 */
 	static inline double toDegrees(double angleInRadians) {
@@ -547,7 +547,7 @@ public:                                    //0.5 degrees
 #endif //USING_VNL
 
 	 /**
-	  * Get the absolute difference in translation and euler rotation angles between this frame and the
+	  * Get the absolute difference in translation and Euler rotation angles between this frame and the
 	  * given one. If there is gimbal-lock in one of the frames return false otherwise true. 
 	  */
 	bool angleAndTranslationDiff(const Frame &f, double &dx, double &dy, double &dz, double &dax, double &day, double &daz) const;
@@ -556,7 +556,7 @@ public:                                    //0.5 degrees
 	  * Get the difference in translation between this frame and the
 	  * given one.
 	  * Essentialy, this shows how different the frame T = (f^-1 * this) is from the identity frame.
-		* The difference in translation is just the absolute value of the transaltions of T.
+		* The difference in translation is just the absolute value of the translations of T.
 		* The difference in rotation is given as a single angular value, this is the angle
 		* from the axis angle representation of the rotational part of T.
     */

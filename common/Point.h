@@ -10,7 +10,7 @@
  * Template defining nD points. Valid types for point entries are the numeric types that 
  * can be reasonably cast to double (int, float, etc.).
  *
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv 
  */
 
 namespace lsqrRecipes {
@@ -22,7 +22,7 @@ public:
 	enum {dimension=n};
 
 	/**
-	 * Ouput the point data to the given output stream as the following string:
+	 * Output the point data to the given output stream as the following string:
 	 *[x1,x2,...xn]
 	 */
 	friend std::ostream &operator<<(std::ostream& output, const Point &p) {

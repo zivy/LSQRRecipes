@@ -89,7 +89,7 @@ void PlaneParametersEstimator<dimension>::estimate(std::vector< Point<double, di
 	               //the one dimensional null space of A is the solution we seek
 	  vnl_vector<double> x(this->minForEstimate+1);
 	  x = svdA.nullvector();
-            //get the (hyper)plane normal, we need to set it so ||n||=1, this 
+            //get the hyperplane normal, we need to set it so ||n||=1, this 
             //means we need to scale our solution to be 
             // 1/||n_computed||*[n_computed,d] which is also a solution to the 
             //equation system.
@@ -159,11 +159,11 @@ void PlaneParametersEstimator<dimension>::leastSquaresEstimate(std::vector< Poin
                //subtract mean matrix
   covariance-=meanMat;
 
-                           //compute eigen-vectors/values of covariance 
+                           //compute eigenvectors/values of covariance 
   vnl_symmetric_eigensystem<double> eigenSystem(covariance);
   
-                //the (hyper)plane normal is the eigen-vector corresponding to 
-                //the smallest eigen-value
+                //the hyperplane normal is the eigenvector corresponding to 
+                //the smallest eigenvalue
                 //I assume ||eigenSystem.V(i,0)|| = 1
   for(i=0; i<dimension; i++)
     parameters.push_back(eigenSystem.V(i,0));

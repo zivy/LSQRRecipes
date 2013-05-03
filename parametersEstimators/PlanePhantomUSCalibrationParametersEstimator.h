@@ -14,13 +14,13 @@
  * coordinate system to the coordinate system of a tracked reference frame that
  * is fixed relative to the US probe. The method is based on the use of a planar
  * phantom, either the bottom of a water bath or a planar membrane.
- *For additional information with regard to US calibration see: 
+ * For additional information with regard to US calibration see: 
  *
  * "A review of calibration techniques for freehand 3-D ultrasound systems", 
  * L. Mercier, T. Lango, F. Lindseth, L.D. Collins, Ultrasound in Med. & Biol., 
  * vol. 31(2), pp. 143-165, 2005.
  * 
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv 
  *
  */
 
@@ -80,15 +80,14 @@ public:
    * R1(3,3)*t_3,
    * R1(3,:)
    * 
-   *                   Angles are in radians.
+   *Angles are in radians.
    *
-   *                   The reason for providing the last 30 entries, is 
-   *                   computational efficiency of the agree method. 
+   *The reason for providing the last 30 entries, is computational efficiency of 
+   *the agree method. 
    *
-   *                   If the vector contains less than 31 data elements or 
-   *                   they do not provide a set of linearly independent equation
-   *                   systems the resulting parameters vector is empty 
-   *                   (size == 0).
+   *If the data vector contains less than 31 data elements or they do not provide 
+   *a set of linearly independent equation systems the resulting parameters 
+   *vector is empty (size == 0).
 	 */	
   virtual void estimate(std::vector<DataType *> &data, 
                         std::vector<double> &parameters);

@@ -10,14 +10,14 @@
  * Classes which inherit from it can be used by the Ransac class to perform robust
  * parameter estimation.
  * The interface includes three methods:
- *                           1.estimate() - Estimation of the parameters using the minimal
- *                                        amount of data (exact estimate).
- *                           2.leastSquaresEstimate() - Estimation of the parameters using
- *                                                      overdetermined data, so that the estimate
- *                                                      minimizes a least squres error criteria.
- *                           3.agree() - Does the given data agree with the model parameters.
+ * 1.estimate() - Estimation of the parameters using the minimal amount of data 
+ *                (exact estimate).
+ * 2.leastSquaresEstimate() - Estimation of the parameters using overdetermined 
+ *                            data, so that the estimate minimizes a least squares 
+ *                            error criterion.
+ * 3.agree() - Does the given data agree with the model parameters.
  *
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv
  *
  */
 
@@ -29,7 +29,7 @@ public:
 
 	/**
 	 * Constructor which takes the number of data objects required for an exact 
-	 * estimate (e.g. 2 for a line where the data objects are points
+	 * estimate (e.g. 2 for a line where the data objects are points)
 	 */
 	ParametersEstimator(unsigned int minElements) {this->minForEstimate = minElements;} 
 

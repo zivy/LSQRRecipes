@@ -15,7 +15,7 @@
  *       assumption is not enforced by the Ray3D class. The user is expected to 
  *       conform (i.e. normalize the ray direction).
  *
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv
  *
  */
 

@@ -10,7 +10,7 @@
  * Template defining nD vectors. Valid types for vector entries are the numeric 
  * types that can be reasonably cast to double (int, float, etc.).
  *
- * @author: Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author: Ziv Yaniv
  */
 
 namespace lsqrRecipes {

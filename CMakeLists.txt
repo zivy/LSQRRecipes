@@ -14,7 +14,7 @@ cmake_minimum_required(VERSION 2.8)
 # LSQRRecipes version number.
 #
 set(LSQRRecipes_VERSION_MAJOR "0")
-set(LSQRRecipes_VERSION_MINOR "1")
+set(LSQRRecipes_VERSION_MINOR "2")
 set(LSQRRecipes_VERSION_PATCH "0")
 
 option(USING_ITK_VNL "Build using ITK version of VNL." OFF)
@@ -116,7 +116,7 @@ set(LSQRRecipes_SRCS
    parametersEstimators/RayIntersectionParametersEstimator.cxx
    parametersEstimators/SinglePointTargetUSCalibrationParametersEstimator.cxx
    parametersEstimators/PlanePhantomUSCalibrationParametersEstimator.cxx
-   parametersEstimators/AbsoluteOrientationParametersEstimator.cxx   
+   parametersEstimators/AbsoluteOrientationParametersEstimator.cxx
 )
 
 #

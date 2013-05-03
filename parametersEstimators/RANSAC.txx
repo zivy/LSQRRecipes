@@ -106,7 +106,7 @@ double RANSAC<T,S>::compute(std::vector<S> &parameters,
         else {  //update the estimate of outliers and the number of iterations we need				           		  				
 				  denominator = log(1.0- pow((double)numVotesForCur/(double)numDataObjects, (double)(numForEstimate)));
 				  numTries = (int)(numerator/denominator + 0.5);
-					            //there are cases when the probablistic number of tries is greater than all possible sub-sets
+					            //there are cases when the probabilistic number of tries is greater than all possible sub-sets
 				  numTries = numTries<allTries ? numTries : allTries;
         }
       }
