@@ -151,6 +151,6 @@ private:
 
 } //namespace lsqrRecipes
 
-#include "RANSAC.txx"
+#include "RANSAC.hxx"
 
 #endif //_RANSAC_H_

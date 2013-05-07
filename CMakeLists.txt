@@ -98,11 +98,11 @@ set(LSQRRecipes_HDRS
    common/Frame.h
    parametersEstimators/ParametersEstimator.h
    parametersEstimators/RANSAC.h
-   parametersEstimators/RANSAC.txx
+   parametersEstimators/RANSAC.hxx
    parametersEstimators/PlaneParametersEstimator.h
-   parametersEstimators/PlaneParametersEstimator.txx
+   parametersEstimators/PlaneParametersEstimator.hxx
    parametersEstimators/SphereParametersEstimator.h
-   parametersEstimators/SphereParametersEstimator.txx
+   parametersEstimators/SphereParametersEstimator.hxx
    parametersEstimators/RayIntersectionParametersEstimator.h
    parametersEstimators/SinglePointTargetUSCalibrationParametersEstimator.h
    parametersEstimators/PlanePhantomUSCalibrationParametersEstimator.h

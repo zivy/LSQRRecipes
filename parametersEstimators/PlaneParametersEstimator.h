@@ -90,6 +90,6 @@ private:
 
 } //namespace lsqrRecipes
 
-#include "PlaneParametersEstimator.txx" //the implementation is in this file
+#include "PlaneParametersEstimator.hxx" //the implementation is in this file
 
 #endif //_PLANE_PARAMETERS_ESTIMATOR_H_

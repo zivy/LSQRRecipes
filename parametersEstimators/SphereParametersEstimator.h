@@ -187,6 +187,6 @@ private:
 
 } //namespace lsqrRecipes
 
-#include "SphereParametersEstimator.txx" //the implementation is in this file
+#include "SphereParametersEstimator.hxx" //the implementation is in this file
 
 #endif //_SPHERE_PARAMETERS_ESTIMATOR_H_
