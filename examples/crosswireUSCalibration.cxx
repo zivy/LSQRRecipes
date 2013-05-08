@@ -25,7 +25,7 @@ std::string getCurrentDateTime(const char* format);
  * save in an xml file using the relevant IGSTK (www.igstk.org) tags for an 
  * affine transformation.
  *
- * @author Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author Ziv Yaniv 
  */
 int main(int argc, char *argv[])
 {

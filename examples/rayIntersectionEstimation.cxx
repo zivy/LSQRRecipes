@@ -30,7 +30,7 @@ void generateData(unsigned int numInliers, unsigned int numOutliers,
  * @param rayLength The length of the ray segment to draw.
  * @param estimatedPlaneParameters [n,a], plane normal and point on plane. Plane 
  *                                 is the set of points p such that n^T(p-a)=0.
- * @param parameterEstimator The plane parameter estimator whoes Agree() method
+ * @param parameterEstimator The plane parameter estimator whose agree() method
  *                           is used to identify inliers.
  */
 void saveOIVFile(std::string &outputFileName,
@@ -49,7 +49,7 @@ void saveOIVFile(std::string &outputFileName,
  * by a sphere. Rays that agree with the estimated model are green, otherwise 
  * they are red.
  *
- * @author Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author Ziv Yaniv 
  */
 int main(int argc, char *argv[])
 {
@@ -148,7 +148,7 @@ void generateData(unsigned int numInliers, unsigned int numOutliers,
   intersectionParameters.push_back(knownIntersectionPoint[1]);
   intersectionParameters.push_back(knownIntersectionPoint[2]);
 
-             //randomly create rays approximatly going through the given point
+             //randomly create rays approximately going through the given point
   for(i=0; i<numInliers; i++) {
     ray.p[0] = random.uniform(-maxRange,maxRange);
     ray.p[1] = random.uniform(-maxRange,maxRange);
@@ -185,14 +185,14 @@ void saveOIVFile(std::string &outputFileName,
                  &parameterEstimator)
 {
   double sphereRadius = 50;
-               //outliers are metalic red 
+               //outliers are metallic red 
   std::string outlierMaterial = "Material {\n";
   outlierMaterial+="\tambientColor 1.0 0.0 0.0\n";
   outlierMaterial+="\tdiffuseColor 0.27 0.15 0.0\n";
   outlierMaterial+="\tspecularColor 1.0 0.0 0.0\n";
   outlierMaterial+="}\n";
 
-               //inliers are metalic green 
+               //inliers are metallic green 
   std::string inlierMaterial = "\tMaterial {\n";
   inlierMaterial+="\t\tambientColor 0.0 1.0 0.0\n";
   inlierMaterial+="\t\tdiffuseColor 0.0 0.27 0.15\n";

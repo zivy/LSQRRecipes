@@ -11,7 +11,7 @@ void reportResults(const std::string &title,
 /*
  * Example of using the exhaustive search method that is part of the RANSAC
  * implementation. For absolute orientation with a small number of points this
- * is computationaly reasonable. The program estimates the transformation using
+ * is computationally reasonable. The program estimates the transformation using
  * a least squares method and a RANSAC wrapper for the same least squares method.
  * The program then prints the estimated/known transformations and associated
  * FREs and TREs. Look at the FRE to identify the outlying point(s).

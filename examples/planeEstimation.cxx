@@ -8,11 +8,11 @@
 #include "RandomNumberGenerator.h"
 
 /**
- * Generate points on a (hyper)plane with additive zero mean Gaussian noise and
+ * Generate points on a hyperplane with additive zero mean Gaussian noise and
  * outliers.
  * @param numInliers How many points are inliers.
  * @param numOutliers How many points are outliers.
- * @param outlierDistance Threshold defining outliers, points that are further
+ * @param outlierDistance Threshold defining outliers, points that are farther
  *                        than this distance from the plane.
  * @param data The points are added to the end of this vector.
  * @param planeParameters [n,a], plane normal and point on plane. Plane is 
@@ -36,7 +36,7 @@ void generateData( unsigned int numInliers, unsigned int numOutliers,
  * @param data The 3D points.
  * @param estimatedPlaneParameters [n,a], plane normal and point on plane. Plane 
  *                                 is the set of points p such that n^T(p-a)=0.
- * @param parameterEstimator The plane parameter estimator whoes Agree() method
+ * @param parameterEstimator The plane parameter estimator whose agree() method
  *                           is used to identify inliers.
  */
 template<unsigned int dimension>
@@ -47,15 +47,15 @@ void saveOIVFile( std::string &outputFileName,
                   &parameterEstimator );
 /**
  * Given the hard coded dimension, and number of outliers and inliers generate
- * a random dataset accordingly. Then estimate the (hyper)plane parameter values
+ * a random dataset accordingly. Then estimate the hyperplane parameter values
  * using a least squares estimate and the RANSAC algorithm. Compare the results
- * to the known (hyper)plane. Code is written for nD data except the 
+ * to the known hyperplane. Code is written for nD data except the 
  * visualization which is limited to 3D. If DIMENSION is set to three, two
  * open inventor scene files are written, showing the least squares and RANSAC
  * estimates. Data points are colored spheres, those that agree with the 
  * estimated model are green, otherwise they are red.
  *
- * @author Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author Ziv Yaniv
  */
 int main(int argc, char *argv[])
 {
@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
       dotProduct+= planeParameters[i]*truePlaneParameters[i];
 	  std::cout<<"\tDot product of real and computed normals[+-1=correct]: ";
     std::cout<<dotProduct<<"\n";
-              //distance between known hyper(plane) and estimated point on plane
+              //distance between known hyperplane and estimated point on plane
     dotProduct = 0.0;
     for( i=0; i<DIMENSION; i++ )
       dotProduct+= (planeParameters[DIMENSION+i] - 
@@ -130,7 +130,7 @@ int main(int argc, char *argv[])
       dotProduct+= planeParameters[i]*truePlaneParameters[i];
 	  std::cout<<"\tDot product of real and computed normals[+-1=correct]: ";
     std::cout<<dotProduct<<"\n";
-              //distance between known hyper(plane) and estimated point on plane
+              //distance between known hyperplane and estimated point on plane
     dotProduct = 0.0;
     for( i=0; i<DIMENSION; i++ )
       dotProduct+= ( planeParameters[DIMENSION+i] - 
@@ -164,7 +164,7 @@ void generateData( unsigned int numInliers, unsigned int numOutliers,
   lsqrRecipes::RandomNumberGenerator random;
 
   planeParameters.clear();
-         //generate points on random (hyper) plane
+         //generate points on random hyperplane
   for( i=0; i<dimension; i++ ) {
     normal[i] = random.uniform();
     pointOnPlane[i] = random.uniform( -coordinateMax, coordinateMax );

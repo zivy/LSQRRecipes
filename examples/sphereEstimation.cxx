@@ -5,11 +5,11 @@
 
 
 /**
- * Generate points on a (hyper)sphere with additive zero mean Gaussian noise and
+ * Generate points on a hypersphere with additive zero mean Gaussian noise and
  * outliers.
  * @param numInliers How many points are inliers.
  * @param numOutliers How many points are outliers.
- * @param outlierDistance Threshold defining outliers, points that are further
+ * @param outlierDistance Threshold defining outliers, points that are farther
  *                        than this distance from the sphere.
  * @param data The points are added to the end of this vector.
  * @param sphereParameters [c,r], sphere center and radius. Sphere is 
@@ -35,7 +35,7 @@ void generateData( unsigned int numInliers, unsigned int numOutliers,
  * @param estimatedSphereParameters [c,r], sphere center and radius. Sphere is 
  *                                  defined as the set of points p such that 
  *                                 (p-c)^T(p-c)=r^2. 
- * @param parameterEstimator The sphere parameter estimator whoes Agree() method
+ * @param parameterEstimator The sphere parameter estimator whose agree() method
  *                           is used to identify inliers.
  */
 template<unsigned int dimension>
@@ -47,15 +47,15 @@ void saveOIVFile(std::string &outputFileName,
 
 /**
  * Given the hard coded dimension, and number of outliers and inliers generate
- * a random dataset accordingly. Then estimate the (hyper)sphere parameter values
+ * a random dataset accordingly. Then estimate the hypersphere parameter values
  * using a least squares estimate and the RANSAC algorithm. Compare the results
- * to the known (hyper)sphere. Code is written for nD data except the 
+ * to the known hypersphere. Code is written for nD data except the 
  * visualization which is limited to 3D. If DIMENSION is set to three, then two
  * open inventor scene files are written, showing the least squares and RANSAC
  * estimates. Data points are colored spheres, those that agree with the 
  * estimated model are green, otherwise they are red.
  *
- * @author Ziv Yaniv (zivy@isis.georgetown.edu)
+ * @author Ziv Yaniv 
  */
 int main(int argc, char *argv[])
 {
@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
     for( i=0; i<DIMENSION; i++ )
       std::cout<<sphereParameters[i]<<", ";
     std::cout<<sphereParameters[i]<<"]\n\n";
-              //distance between known (hyper)sphere center and estimated one,
+              //distance between known hypersphere center and estimated one,
               //and difference between the two radii
     for( i=0; i<DIMENSION; i++ )
       tmp[i] = sphereParameters[i] - trueSphereParameters[i];
@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
     for( i=0; i<DIMENSION; i++ )
       std::cout<<sphereParameters[i]<<", ";
     std::cout<<sphereParameters[i]<<"]\n\n";
-              //distance between known hyper(sphere) center and estimated one,
+              //distance between known hypersphere center and estimated one,
               //and difference between the two radii
     for( i=0; i<DIMENSION; i++ )
       tmp[i] = sphereParameters[i] - trueSphereParameters[i];
@@ -149,7 +149,7 @@ void generateData( unsigned int numInliers, unsigned int numOutliers,
   lsqrRecipes::RandomNumberGenerator random;
 
   sphereParameters.clear();
-         //generate points on random (hyper) sphere
+         //generate points on random hypersphere
   for( i=0; i<dimension; i++ ) {
     sphereCenter[i] = random.uniform( -coordinateMax, coordinateMax );
   }
@@ -196,14 +196,14 @@ void saveOIVFile(std::string &outputFileName,
     return;
 
   double dataSphereRadius = 50.0;
-               //outliers are metalic red 
+               //outliers are metallic red 
   std::string outlierMaterial = "Material {\n";
   outlierMaterial+="\tambientColor 1.0 0.0 0.0\n";
   outlierMaterial+="\tdiffuseColor 0.27 0.15 0.0\n";
   outlierMaterial+="\tspecularColor 1.0 0.0 0.0\n";
   outlierMaterial+="}\n";
 
-               //inliers are metalic green 
+               //inliers are metallic green 
   std::string inlierMaterial = "\tMaterial {\n";
   inlierMaterial+="\t\tambientColor 0.0 1.0 0.0\n";
   inlierMaterial+="\t\tdiffuseColor 0.0 0.27 0.15\n";

@@ -14,7 +14,7 @@ using namespace lsqrRecipes;
  * @param numPoints How many points, in total there will be numPoints+3.
  * @param data The points are added to the end of this vector. The first three 
  *             points define the plane the rest numPoints points are 
- *             approximatly on the plane.
+ *             approximately on the plane.
  */
 void generatePlaneData(unsigned int numPoints, 
                        std::vector< Point3D > &data);
