@@ -1,7 +1,7 @@
 #ifndef _LINE2D_PARAMETERS_ESTIMATOR_H_
 #define _LINE2D_PARAMETERS_ESTIMATOR_H_
 
-#include "Copyright.h"
+#include "copyright.h"
 
 #include "ParametersEstimator.h"
 #include "Point2D.h"

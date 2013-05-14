@@ -12,3 +12,7 @@ squares solution as compared to wrapping it with the RANSAC
 algorithm. The output file format is OpenInventor. You can display
 it using the viewer found in the coin3DViewer directory
 (win32 command line application).
+
+On linux (ubuntu) you can use the ivview to view open inventor
+files, unfortunately it currently has a bug and does not run, but
+it should be worth trying.
