@@ -1,4 +1,7 @@
 
+add_executable(lineEstimationTest LineParametersEstimatorTest.cxx)
+target_link_libraries(lineEstimationTest ${LINK_LIBRARIES})
+
 add_executable(planeEstimationTest PlaneParametersEstimatorTest.cxx)
 target_link_libraries(planeEstimationTest ${LINK_LIBRARIES})
 
@@ -18,6 +21,7 @@ add_executable(absoluteOrientationParametersEstimatorTest AbsoluteOrientationPar
 target_link_libraries(absoluteOrientationParametersEstimatorTest ${LINK_LIBRARIES})
 
 
+add_test(LineEstimationTest lineEstimationTest)
 add_test(PlaneEstimationTest planeEstimationTest)
 add_test(SphereEstimationTest sphereEstimationTest)
 add_test(RayIntersectionEstimationTest rayIntersectionEstimationTest)

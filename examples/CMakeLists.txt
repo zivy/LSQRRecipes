@@ -65,6 +65,11 @@ if(LSQRRecipes_FOUND)
 endif()
 
 
+#
+# Example program showing the use of RANSAC for line fitting in 3D
+#
+add_executable(lineEstimation lineEstimation.cxx)
+target_link_libraries(lineEstimation ${LINK_LIBRARIES})
 
 #
 # Example program showing the use of RANSAC for plane fitting
