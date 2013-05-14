@@ -918,7 +918,7 @@ void Frame::getRotationQuaternion(double quaternion[4]) const
 	    quaternion[2] = (this->rotation[0][2] - this->rotation[2][0])/denom;
 	    quaternion[3] = (this->rotation[1][0] - this->rotation[0][1])/denom;
 	}
-	else {  //stablize the computation of the vector part when halfTheta is near 90 degrees
+	else {  //stabilize the computation of the vector part when halfTheta is near 90 degrees
 		int i,j,k;
 		double w;
 		       //find maximal entry on diagonal
