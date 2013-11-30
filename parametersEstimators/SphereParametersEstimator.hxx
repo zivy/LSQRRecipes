@@ -258,7 +258,7 @@ bool SphereParametersEstimator<dimension>::agree(std::vector<double> &parameters
   double delta = 0;
   for(unsigned int i=0; i<dimension; i++)
     delta+=((data[i] - parameters[i])*(data[i] - parameters[i]));
-  delta = fabs(sqrt(delta)) - parameters[dimension];
+  delta = fabs(sqrt(delta) - parameters[dimension]);
 
   return delta < this->delta;
 }

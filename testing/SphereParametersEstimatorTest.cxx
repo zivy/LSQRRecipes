@@ -199,7 +199,7 @@ bool test3D(std::ostream &out)
 /*****************************************************************************/
 bool test2D(std::ostream &out)
 {
-  bool succeedExact, succeedAlgebraic, succeedGeometric;
+  bool succeedExact, succeedAlgebraic, succeedGeometric, succeedAgree;
 
 	double angleStepSize;
   std::vector<double> trueCircleParameters;
@@ -275,6 +275,26 @@ bool test2D(std::ostream &out)
     compareAndPrint<2>( "Geometric least squares circle parameters [c_x,c_y,r]:\n\t", 
                         3*noiseSigma, trueCircleParameters,
                         circleParameters, out );
+      //Test the agree method, set the circle radius to 2.0, center is already
+      //(0.0,0.0)
+  trueCircleParameters[2] = 2.0;
+       //outlier inside circle
+  pnt[0] = 0.0;
+  pnt[1] = 0.0;
+  succeedAgree = !cpEstimator.agree(trueCircleParameters, pnt);
+     //inlier inside circle
+  pnt[0] = 1.75;
+  pnt[1] = 0.0;
+  succeedAgree = succeedAgree && cpEstimator.agree(trueCircleParameters, pnt);
+       //inlier outside circle
+  pnt[0] = 2.25;
+  pnt[1] = 0.0;
+  succeedAgree = succeedAgree && cpEstimator.agree(trueCircleParameters, pnt);
+       //outlier outside circle
+  pnt[0] = 4.0;
+  pnt[1] = 0.0;
+  succeedAgree = succeedAgree && !cpEstimator.agree(trueCircleParameters, pnt);
+
        //clear the data
 	minPointData.clear();
 	pointData.clear();
@@ -352,7 +372,8 @@ bool test2D(std::ostream &out)
 		out<<"\tSum of squared errors: "<<sum<<"\n";
 	}
 	pointData.clear();
-  return ( succeedExact && succeedAlgebraic && succeedGeometric );
+  return ( succeedExact && succeedAlgebraic && 
+           succeedGeometric && succeedAgree );
 }
 /*****************************************************************************/
 template<unsigned int dimension>
