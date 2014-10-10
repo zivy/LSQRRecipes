@@ -799,6 +799,55 @@ void Frame::setRotationQuaternion(double quaternion[4], bool normalizeQuaternion
 	this->rotation[2][2] = 1-2*(qx*qx+qy*qy);  
 }
 /*****************************************************************************/
+/**
+ * This implementation is based on the approach described in:
+ * T. Moller, and J. F. Hughes, "Efficiently Building a Matrix to Rotate One 
+ * Vector to Another", J. Graph. Tools, 4(4): 1-4, 1999.
+ *
+ * In general the normal to the rotation plane is defined by the cross product
+ * of the two normalized vectors and the rotation angle can be obtained from:
+ * arccos(dot(left,right)); or 
+ * arcsin(cross(left,right)); or 
+ * atan2(cross(left,right), dot(left,right)) which is the most stable.
+ * 
+ * The difference between the efficient version and the naive version is that
+ * the efficient version does not use trigonometric functions.
+ *
+ * Note that we do not implement the reflection based approach from the paper 
+ * which dealt with numerical stability when the rotation angle was small (near
+ * parallel vectors). The reason being that in practice we did not encounter a 
+ * problem with small angle rotations.  
+ */
+void Frame::setRotationFromTo(Vector3D &from, Vector3D &to)
+{
+  Vector3D left(from), right(to), v;
+  double c, h;
+
+  left.normalize();
+  right.normalize();
+  v = crossProduct(left, right);
+  c = left*right;
+         //in the original paper this term was (1-c)/(1-c^2). it was later
+        //simplified by Gottfried Chen, who noted that this term is 
+        //(1-c)/((1-c)(1+c)) = 1/(1+c)
+  h = 1/(1+c);
+
+          //first row
+  this->rotation[0][0] = c + h*v[0]*v[0];
+  this->rotation[0][1] = h*v[0]*v[1] - v[2];
+  this->rotation[0][2] = h*v[0]*v[2] + v[1];
+         //second row
+  this->rotation[1][0] = h*v[0]*v[1] + v[2];
+  this->rotation[1][1] = c + h*v[1]*v[1];
+  this->rotation[1][2] = h*v[1]*v[2] - v[0];
+         //third row
+  this->rotation[2][0] = h*v[0]*v[2] - v[1];
+  this->rotation[2][1] = h*v[1]*v[2] + v[0];
+  this->rotation[2][2] = c + h*v[2]*v[2];
+
+
+}
+/*****************************************************************************/
 void Frame::set(const Frame &f) 
 {
 	int sz = 3*sizeof(double);

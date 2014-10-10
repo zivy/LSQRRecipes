@@ -17,7 +17,7 @@
 
 /**
  * Implementation of a Frame/Rigid/Euclidean transformation.
- * All angular input and ouput is done in radians.
+ * All angular input and output is done in radians.
  *
  * @author: Ziv Yaniv 
  */
@@ -448,6 +448,14 @@ public:                                    //0.5 degrees
      */
   void setRotationQuaternion(double quaternion[4], bool normalizeQuaternion = false);
 
+  /**
+   * Set this frame's rotation so that it rotates the vector "from" to the 
+   * vector to, R(from) = to.
+   * @param from 3D vector that we want to rotate.
+   * @param to 3D vector which is obtained by applying the resulting rotation 
+   *           to the "from" vector.
+   */
+  void setRotationFromTo(Vector3D &from, Vector3D &to);
 
     /**
      * Set this frame to the given frame.
