@@ -91,7 +91,7 @@ double RANSAC<T,S>::compute(std::vector<S> &parameters,
       std::fill(curVotes,curVotes+numDataObjects, false);			
                                 //continue checking data until there is no chance of getting a larger consensus set 
                                 //or all the data has been checked              
-			for(m=0; m<numDataObjects && numVotesForBest-numVotesForCur<numDataObjects-m+1; m++) {
+			for(m=0; m<numDataObjects && static_cast<int>(numVotesForBest-numVotesForCur)<static_cast<int>(numDataObjects-m+1); m++) {
 				if(paramEstimator->agree(exactEstimateParameters, data[m])) {
 					curVotes[m] = true;
 					numVotesForCur++;
