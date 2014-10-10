@@ -26,7 +26,7 @@
  *                            line.
  *        
  * 
- * @author: Ziv Yaniv (ZYaniv@childrensnational.org)
+ * @author: Ziv Yaniv 
  *
  */
 namespace lsqrRecipes {

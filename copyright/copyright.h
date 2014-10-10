@@ -34,7 +34,7 @@ namespace lsqrRecipes {
 
 class Copyright {
 public:
-  static void print(std::ostream& output) {output<<"Copyright (c) 2010-2013 Ziv Yaniv zyaniv@cnmc.org\n";}
+  static void print( std::ostream& output ) {output<<"Copyright (c) 2010-2014 Ziv Yaniv\n";}
 };
 
 } //namespace lsqrRecipes
