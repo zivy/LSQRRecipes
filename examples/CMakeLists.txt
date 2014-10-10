@@ -119,7 +119,20 @@ target_link_libraries(planeUSCalibration ${LINK_LIBRARIES})
 
 #
 # Example program showing the use of the exhaustive search option in the RANSAC
-# class for absolute orientation when using a small number of paired points.
+# class for absolute orientation when using a small number of paired points
 #
-add_executable(absoluteOrientation AbsoluteOrientation.cxx)
+add_executable(absoluteOrientation absoluteOrientation.cxx)
 target_link_libraries(absoluteOrientation ${LINK_LIBRARIES})
+
+#
+# Example program showing the use of RANSAC for solving a linear equation
+# system
+#
+add_executable(linearEquationSystemSolver linearEquationSystemSolver.cxx)
+target_link_libraries(linearEquationSystemSolver ${LINK_LIBRARIES})
+
+#
+# Example program showing the use of RANSAC for pivot calibration
+#
+add_executable(pivotCalibration pivotCalibration.cxx)
+target_link_libraries(pivotCalibration ${LINK_LIBRARIES})

@@ -20,7 +20,8 @@ The parametric objects include:
 7. 2D line - doesn't require the VNL library and can be easily incorporated
    into an existing project using a minimal subset of the LSQRRecipes library
    (see details below).
-
+8. solution to a set of linear equations.
+9. translations obtained via pivot calibration.
 -------------------------------------------------------------------------------
 
 Requirements:

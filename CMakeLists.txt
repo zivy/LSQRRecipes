@@ -110,6 +110,9 @@ set(LSQRRecipes_HDRS
    parametersEstimators/SinglePointTargetUSCalibrationParametersEstimator.h
    parametersEstimators/PlanePhantomUSCalibrationParametersEstimator.h
    parametersEstimators/AbsoluteOrientationParametersEstimator.h
+   parametersEstimators/DenseLinearEquationSystemParametersEstimator.h
+   parametersEstimators/DenseLinearEquationSystemParametersEstimator.hxx
+   parametersEstimators/PivotCalibrationParametersEstimator.h
 )
 
 set(LSQRRecipes_SRCS
@@ -121,6 +124,7 @@ set(LSQRRecipes_SRCS
    parametersEstimators/SinglePointTargetUSCalibrationParametersEstimator.cxx
    parametersEstimators/PlanePhantomUSCalibrationParametersEstimator.cxx
    parametersEstimators/AbsoluteOrientationParametersEstimator.cxx
+   parametersEstimators/PivotCalibrationParametersEstimator.cxx
 )
 
 #
